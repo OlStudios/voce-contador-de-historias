@@ -1,61 +1,148 @@
-var w_kotoba = [
-    ["Chin Chin", "ちんちん", "Kintama", "金玉", "Bobo", "ぼぼ", "Ketsu", "ケツ", "Ketusnoana", "Chikubi", "乳首", "Oppai", "おっぱい", "Paipai", "ぱいぱい", "Oshikko", "おしっこ", "Ochinchin", "おちんちん", "Chinko", "ちんこ", "Chinpo", "チンポ", "Pokochin", "ポコチン", "Oppai", "おっぱい", "Tamatama", "たまたま", "Manko", "まんこ", "Okasu", "犯す", "Komasu", "こます", "Itekomasu", "いてこます", "Kamawohoru", "かまをほる", "Kuso", "糞", "Kusotare", "クソタレ", "Unko", "うんこ", "Shikko", "しっこ", "Konchikushou ", "こん畜生", "Chikushou", "畜生", "Okama", "おかま", "Yariman", "やりまん", "酔っ払い", "Yopparai", "薬漬け", "Yakudzuke", "薬物", "Yakubutsu", "死ぬ", "Kuso", "糞", "Kusotare", "クソタレ", "Unko", "うんこ", "Shikko", "しっこ", "Hentai", "変態"],
-    ["Bakemono", "化け物", "Akuma", "悪魔", "Oni", "鬼", "Majyo", "魔女", "Obake", "おばけ", "Miira", "ミイラ", "Hidoi", "酷い", "メイジ", "Meiji", "ソーサラー", "Sosara", "魔女", "Majo", "ドルイド", "Doruido", "アンデッド", "Andeddo", "ゾンビ", "Zonbi", "グール", "Gūru", "サタン", "Satan", "幽霊", "Yūrei", "魂", "Tamashī", "精霊", "Seirei", "人食い", "Tomogui", "Hito-gui", "凶悪性" , "Kyōaku-sei", "小児性愛者", "Shōniseiai-sha"],
-    ["Baka", "馬鹿", "Otankonasu", "おたんこなす", "Aho", "あほ", "Kusottare", "クソッタレ", "Manuke", "間抜け", "Heta", "Hetakuso", "下手糞", "Doji", "どじ", "Bontsuke", "ぽんつく", "Roba", "驢馬", "Usagiuma", "兎馬", "Arokamono", "愚か者", "Funeke", "腑抜け", "Gubetsu", "愚物", "Oko", "おこ", "Dobeta", "ど下手", "Doinaka", "ど田舎", "Donbyakushou", "どん百姓"],
-    ["Damatte", "黙って", "Damare", "黙れ", "Shine", "死ね", "Urusai", "うるさい", "Ikke-nai", "Ikke-naine", "いっけ-ない", "Kutabare", "くたばれ", "Deteike", "出て行け", "Bakanisuruna", "ばかにするな", "Hikome", "ひっこめ", "Namekusatte", "なめくさって"]
-	];
-var not_kotoba = ["Ugokasu", "動かす", "Okane", "お金", "Doko", "どこ", "Koko", "ここ", "Damatte inai de sa", "黙っていないでさ", "Aonisai", "青二才", "yorokonda", "yorokonde", "喜んで", "Hitokoe", "一声", "Nokoshi", "残し", "tokoshie", "永久"];
+document.getElementById("ChooseText").onkeydown = function(a) {
+    if (a.keyCode == 13) {
+        SendDialog();
+    }
+}
+document.getElementById("Time").onkeydown = function(a) {
+    if (a.keyCode == 13) {
+        ChangeCenary();
+    }
+}
+document.getElementById("NewPerson").onkeydown = function(a) {
+    if (a.keyCode == 13) {
+        AddPerson();
+    }
+}
+function SendDialog() {
+    switch (document.getElementById("Choose").value) {
+        case "Falar":
+            var Select = document.getElementById("Person").selectedIndex;
+            var Person = document.getElementById("Person").value;
+            document.getElementById("Person").value = "";
+            var ChooseText = document.getElementById("ChooseText").value;
+            document.getElementById("ChooseText").value = "";
+            var node = document.createElement("h3");
+            var node1 = document.createElement("p");
+            var Emote = document.getElementById("Emote").value;
+            var btn = document.createTextNode(Person);
+            var btn1 = document.createTextNode(ChooseText);
+            var elem = document.getElementById('AutoScroll');
+            document.getElementById('Person').getElementsByTagName('option')[Select].selected = 'selected';
+            node.appendChild(btn);
+            node1.appendChild(btn1);
+            document.getElementById("Dialog").appendChild(node);
+            document.getElementById("Dialog").appendChild(node1);
+            if (Emote == "Animado") {
+                document.getElementById("Dialog").lastChild.style.color = "orange";
+            } else if (Emote == "Neutro") {
+                document.getElementById("Dialog").lastChild.style.color = "black";
+            } else if (Emote == "Feliz") {
+                document.getElementById("Dialog").lastChild.style.color = "Gold";
+            } else if (Emote == "Triste") {
+                document.getElementById("Dialog").lastChild.style.color = "blue";
+            } else if (Emote == "Irado") {
+                document.getElementById("Dialog").lastChild.style.color = "red";
+            } else if (Emote == "Surpreso") {
+                document.getElementById("Dialog").lastChild.style.color = "MediumSlateBlue";
+            } else if (Emote == "Inspirado") {
+                document.getElementById("Dialog").lastChild.style.color = "cyan";
+            } else if (Emote == "Constrangido") {
+                document.getElementById("Dialog").lastChild.style.color = "DeepPink";
+            } else if (Emote == "Entediado") {
+                document.getElementById("Dialog").lastChild.style.color = "gray";
+            } else if (Emote == "Decepcionado") {
+                document.getElementById("Dialog").lastChild.style.color = "purple";
+            } else if (Emote == "Assustado") {
+                document.getElementById("Dialog").lastChild.style.color = "MidnightBlue";
+            } else if (Emote == "Orgulhoso") {
+                document.getElementById("Dialog").lastChild.style.color = "Orange";
+            } else if (Emote == "Enojado") {
+                document.getElementById("Dialog").lastChild.style.color = "Green";
+            }
+            if (Select % 2 == 1) {
+                node.style.textAlign = "left";
+                document.getElementById("Dialog").lastChild.style.marginLeft = "10px";
+                document.getElementById("Dialog").lastChild.style.paddingLeft = "10px";
+                node.style.marginLeft = "10px";
+                document.getElementById("Dialog").lastChild.style.border = "1px solid white";
+                document.getElementById("Dialog").lastChild.style.width = "50%";
+                document.getElementById("Dialog").lastChild.style.backgroundColor = "white";
+                document.getElementById("Dialog").lastChild.style.borderRadius = "10px 10px 10px 0px";
+                document.getElementById("Dialog").lastChild.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px";
+            } else {
+                document.getElementById("Dialog").lastChild.style.textAlign = "right";
+                document.getElementById("Dialog").lastChild.style.marginRight = "10px";
+                document.getElementById("Dialog").lastChild.style.marginLeft = "auto";
+                document.getElementById("Dialog").lastChild.style.paddingRight = "10px";
+                node.style.textAlign = "right";
+                node.style.marginRight = "10px";
+                node.style.marginLeft = "auto";
+                document.getElementById("Dialog").lastChild.style.border = "1px solid white";
+                document.getElementById("Dialog").lastChild.style.backgroundColor = "white";
+                document.getElementById("Dialog").lastChild.style.borderRadius = "10px 10px 0px 10px";
+                document.getElementById("Dialog").lastChild.style.width = "50%";
+                document.getElementById("Dialog").lastChild.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px";
+            }
+            elem.scrollTop = elem.scrollHeight;
+            break;
+        case "Narrar":
+            var ChooseText = document.getElementById("ChooseText").value;
+            document.getElementById("ChooseText").value = "";
+            var node = document.createElement("p");
+            var btn = document.createTextNode(ChooseText);
+            var elem = document.getElementById('AutoScroll');
+            node.appendChild(btn);
+            document.getElementById("Dialog").appendChild(node);
+            document.getElementById("Dialog").lastChild.style.textAlign = "center";
+            document.getElementById("Dialog").lastChild.style.border = "1px solid white";
+            document.getElementById("Dialog").lastChild.style.backgroundColor = "white";
+            document.getElementById("Dialog").lastChild.style.borderRadius = "10px";
+            document.getElementById("Dialog").lastChild.style.marginLeft = "10px";
+            document.getElementById("Dialog").lastChild.style.marginRight = "10px";
+            document.getElementById("Dialog").lastChild.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px";
+            elem.scrollTop = elem.scrollHeight;
+            break;
+    }
+}
 
-function ScanLyrics() {
-    document.getElementById("kt").innerHTML = "";
-    document.getElementById("kt1").innerHTML = "";
-    document.getElementById("kt2").innerHTML = "";
-    document.getElementById("kt3").innerHTML = "";
-    document.getElementById("kt4").innerHTML = "";
-    var lyrics = document.getElementById("Lyrics").value;
-    var kt = 0;
-    var kt1 = 0;
-    var kt2 = 0;
-    var kt3 = 0;
-    var kt4 = 0;
-    lyrics = lyrics.toUpperCase();
-    for (z = 0; z < w_kotoba.length; z++) {
-        for (c = 0; c < w_kotoba[z].length; c++) {
-            if (lyrics.search(w_kotoba[z][c].toUpperCase()) > -1) {
-                kt++;
-				console.log(w_kotoba[z][c]);
-                if (z == 0) {
-                    kt1++;
-                } else if (z == 1) {
-                    kt2++;
-                } else if (z == 2) {
-                    kt3++;
-                } else if (z == 3) {
-                    kt4++;
-                }
-            }
-            if (c < not_kotoba.length) {
-                if (lyrics.search(not_kotoba[c].toUpperCase()) > -1) {
-                    kt--;
-                }
-            }
-        }
-    }
-    if (kt > 0) {
-        document.getElementById("kt").innerHTML = "Essa música contém:";
-        if (kt1 > 0) {
-            document.getElementById("kt1").innerHTML = "Linguagem obscena";
-        }
-        if (kt2 > 0) {
-            document.getElementById("kt2").innerHTML = "Conteúdo obscuro";
-        }
-        if (kt3 > 0) {
-            document.getElementById("kt3").innerHTML = "Apóstrofes parciais";
-        }
-        if (kt4 > 0) {
-            document.getElementById("kt4").innerHTML = "Imperativos ameaçadores";
-        }
-    } else {
-        document.getElementById("kt").innerHTML = "Nenhum expletívo identificado.";
-    }
+function ChangeCenary() {
+    var Cenary = document.getElementById("Cenary").value;
+    document.getElementById("Cenary").value = "";
+    var Time = document.getElementById("Time").value;
+    document.getElementById("Time").value = "";
+    var node = document.createElement("p");
+    var node1 = document.createElement("h3");
+    var btn = document.createTextNode(Cenary + ", " + Time);
+    var elem = document.getElementById('AutoScroll');
+    node1.appendChild(btn);
+    document.getElementById("Dialog").appendChild(node1);
+    document.getElementById("Dialog").lastChild.style.color = "black";
+    document.getElementById("Dialog").lastChild.style.textAlign = "center";
+    document.getElementById("Dialog").lastChild.style.border = "1px solid white";
+    document.getElementById("Dialog").lastChild.style.backgroundColor = "white";
+    document.getElementById("Dialog").lastChild.style.borderRadius = "10px";
+    document.getElementById("Dialog").lastChild.style.marginLeft = "10px";
+    document.getElementById("Dialog").lastChild.style.marginRight = "10px";
+    document.getElementById("Dialog").lastChild.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px";
+    elem.scrollTop = elem.scrollHeight;
+}
+
+function AddPerson() {
+    var Person = document.getElementById("NewPerson").value;
+	document.getElementById("NewPerson").value = "";
+    var node = document.createElement("option");
+    var node1 = document.getElementById("Person");
+    var btn = document.createTextNode(Person);
+    node1.appendChild(node);
+    node.appendChild(btn);
+}
+
+function RemPerson() {
+    var Person = document.getElementById('Person');
+    Person.remove(Person.selectedIndex);
+}
+
+function UnsetChild() {
+    var Dialog = document.getElementById("Dialog");
+    Dialog.removeChild(Dialog.lastChild);
 }

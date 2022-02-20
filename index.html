@@ -3,43 +3,91 @@
 
 <head>
     <title>
-        DenyLanguage
+        Você, Contador de Histórias
     </title>
     <meta charset="UTF-8" />
     <style>
         body {
-            background-color: #cdcdcd;
+            margin: 0;
         }
 
         * {
+            font-weight: bold;
             font-family: Century Gothic;
+            word-wrap: break-word;
         }
     </style>
 </head>
 
 <body>
-	<hr/>
-		<h1 id="Title">
-			DenyLanguage
-		</h1>
-	<hr/>
-	<hr/>
-		<textarea type="text" id="Lyrics">
-		</textarea>
-	<hr/>
-	<hr/>
-		<button onclick="ScanLyrics()">
-			Analisar
-		</button>
-	<hr/>
-	<hr/>
-		<h3 id="kt">
-		</h3>
-		<li id="kt1"></li>
-		<li id="kt2"></li>
-		<li id="kt3"></li>
-		<li id="kt4"></li>
-	<hr/>
+    <div id="Cad">
+        <hr />
+        <h3>
+            Caderno
+            <span style="float:right;margin-right:20px">
+                    Cenário:
+                    <input type="text" id="Cenary"/>
+                    Tempo:
+                    <input type="text" id="Time"/>
+                    <button onclick="ChangeCenary()">
+                        Enviar
+                    </button>
+            </span>
+        </h3>
+        <hr />
+        <div style="height:390px;overflow:scroll" id="AutoScroll">
+            <span id="Dialog">
+            </span>
+        </div>
+        <hr />
+        <h3>
+            Caneta
+            <span style="float:right;margin-right:20px">
+                <button onclick="UnsetChild()">
+                    Desfazer
+                </button>
+            </span>
+        </h3>
+        <hr />
+    </div>
+    <hr />
+    <div id="Can">
+        <select id="Person" style="width:110px">
+            <option disabled>Personagens</option>
+        </select>
+        <input type="text" id="NewPerson" size="10"/>
+        <button onclick="AddPerson()">
+			+
+        </button>
+        <button onclick="RemPerson()">
+            -
+        </button>
+        <select id="Choose">
+            <option>Falar</option>
+            <option>Narrar</option>
+        </select>
+        <select id="Emote">
+            <option>Neutro</option>
+            <option>Feliz</option>
+            <option>Irado</option>
+            <option>Triste</option>
+            <option>Surpreso</option>
+            <option>Animado</option>
+            <option>Inspirado</option>
+            <option>Constrangido</option>
+            <option>Entediado</option>
+            <option>Decepcionado</option>
+            <option>Assustado</option>
+            <option>Orgulhoso</option>
+            <option>Enojado</option>
+        </select>
+        <input type="text" id="ChooseText" size="123" />
+        <button onclick="SendDialog()">
+            Enviar
+        </button>
+    </div>
+    <hr />
     <script src="index.js"></script>
 </body>
+
 </html>

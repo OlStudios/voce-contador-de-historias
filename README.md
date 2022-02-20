@@ -1,14 +1,6 @@
-# DenyLanguage
-Uma ferramenta capaz de identificar mais de 100 expletívos japoneses em uma música.
-Insira a letra da música na caixa de texto e clique em "Analisar".
-O resultado exibirá uma mensagem listando apenas as categorias de expletívos contidos na letra da música.
-Há quatro categorias:
-###### Linguagem obscena
-Palavras que remetem nome de orgãos sexuais, fluídos orgânicos, verbos e adjetivos obscenos.
-###### Conteúdo obscuro
-Substantivos que remetem criaturas sobrenaturais e culturas depravantes.
-###### Apóstrofes parciais
-Substantivos e adjetivos que destacam características físicas, intelecto e condição financeira.
-###### Imperativos ameaçadores
-Frases curtas e verbos imperativos onde há a intenção de intimidar e ameaçar.
-# Um aviso aos santos, não leiam o código-fonte.
+# voce-contador-de-historias
+Você, Contador de Histórias é uma interface para criação de histórias com uma estrutura simples. Foi desenvolvida imitando a mesa de trabalho de um autor.
+## Caderno
+Onde a história é registrada, também possui uma ferramenta para informar o cenário e o tempo onde a história ocorre.
+## Caneta
+A caneta possui três funcionalidades: gerenciar o elenco da história, decidir se o próximo parágrafo escrito no caderno será um texto narrativo ou o diálogo de um personagem e escrever o texto a ser registrado no caderno.
