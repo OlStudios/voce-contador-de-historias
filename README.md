@@ -13,5 +13,5 @@ A opção Falar exibirá o que for escrito na caixa de texto maior como o diálo
 A opção Narrar exibirá o que for escrito na caixa de texto maior como diálogo narrado.
 Escolha a emoção que um personagem expressaria durante seu diálogo, cada emoção corresponde a uma cor única.
 
-###Envie-me sugestões e críticas.
-###Victor Oliveira Silva, OlStudios.
+### Envie-me sugestões e críticas.
+### Victor Oliveira Silva, OlStudios.
