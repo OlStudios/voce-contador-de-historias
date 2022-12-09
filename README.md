@@ -17,8 +17,8 @@ Selecione o nome de um personagem e clique em "-" para removê-lo, fazer isso n�
 
 A opção Falar exibirá o que for escrito na caixa de texto maior como o diálogo de um personagem.
 
-A opção Narrar exibirá o que for escrito na caixa de texto maior como diálogo narrado.
+A opção Narrar exibirá o que for escrito na caixa de texto maior como uma narração.
 
-Escolha a emoção que um personagem expressaria durante seu diálogo, cada emoção corresponde a uma cor única.
+Escolha a emoção que um personagem expressaria durante seu diálogo, cada emoção corresponde a uma cor específica.
 ### Envie-me sugestões e críticas.
 ### Victor Oliveira Silva, OlStudios.
