@@ -5,7 +5,7 @@ Onde é exibido o diálogo dos personagens e a narração dos eventos.
 
 Comece no canto superior direito, informando onde e quando os eventos da história irão ocorrer.
 
-A caixa de texto no meio exibe tudo que o usuário escrever, o design imita um aplicativo de mensagens.
+A caixa de texto no meio exibe tudo que o usuário escrever, o design imita um aplicativo de mensagens instantâneas.
 ## Caneta
 É onde o usuário grava o nome dos personagens, desenvolve o diálogo e as emoções que estão sentindo.
 
